@@ -3,7 +3,6 @@
 Defines a class Rectangle
 """
 
-
 class Rectangle:
     """Representation of a rectangle"""
     def __init__(self, height=0, width=0 ):

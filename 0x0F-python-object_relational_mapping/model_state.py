@@ -1,15 +1,17 @@
 #!/usr/bin/python3
-"""A script that contains the class definition of a City"""
-from model_state import Base
-from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
+"""
+Contains the class definition of a State that inherits from
+declarative_base
+"""
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String
+
+Base = declarative_base()
 
 
-class City(Base):
-    """The implementation of the City class"""
-    __tablename__ = "cities"
-    id = Column(Integer, nullable=False, autoincrement=True,
-                unique=True, primary_key=True)
+class State(Base):
+    """Class implementation of the State object"""
+    __tablename__ = 'states'
+    id = Column(Integer, primary_key=True,
+                nullable=False, unique=True, autoincrement=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
-    state = relationship('State', back_populates='cities')

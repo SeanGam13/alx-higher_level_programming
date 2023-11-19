@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-A script that contains the class definition of a State that inherits from declarative_base
+Contains the class definition of a State that inherits from
+declarative_base
 """
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
